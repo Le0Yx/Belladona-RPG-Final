@@ -1,0 +1,58 @@
+MESA DE RPG DE BELLADONNA - COMO USAR
+======================================
+
+O QUE TEM NESTA PASTA
+  server.js        o servidor (guarda fichas, tokens, névoa e conecta todo mundo em tempo real)
+  config.json      suas configurações: PORTA, SENHA DO MESTRE e CÓDIGO DA MESA  <-- EDITE ANTES DE USAR
+  seed.json        os segredos iniciais do mestre (descrições dos locais, marcações nos mapas, notas)
+  public/index.html  o app completo, com os 14 mapas (cidade, Basílica e 11 locais)
+  iniciar.bat      atalho para Windows (clique duas vezes)
+  iniciar.sh       atalho para Mac/Linux
+
+PASSO A PASSO (NO SEU COMPUTADOR)
+  1. Instale o Node.js, versão LTS: https://nodejs.org   (uma vez só)
+  2. Abra o config.json num editor de texto (Bloco de Notas serve) e troque:
+       "senhaMestre": uma senha só sua
+       "codigoMesa": uma palavra que você passa para os jogadores
+  3. Windows: clique duas vezes em iniciar.bat.
+     Mac/Linux: abra o terminal na pasta e rode:  node server.js
+  4. A janela mostra os endereços. Abra http://localhost:3000 no navegador.
+  5. Na tela de login:
+       Mestre: seu nome, marque "Sou o mestre" e digite a senha.
+       Jogadores: o nome deles e o código da mesa.
+  Deixe a janela aberta durante a sessão. Para parar: feche a janela ou Ctrl+C.
+
+COMO OS JOGADORES ENTRAM
+  - Mesma casa / mesma rede Wi-Fi: eles abrem o endereço "Na mesma rede Wi-Fi" mostrado na janela.
+  - Pela internet, de qualquer lugar (duas opções):
+      A) Túnel gratuito, sem instalar nada no servidor: com o servidor ligado, use um serviço de túnel
+         (por exemplo, Cloudflare Tunnel: "cloudflared tunnel --url http://localhost:3000", ou ngrok:
+         "ngrok http 3000"). Ele gera um link https que você manda aos jogadores. O link só funciona
+         enquanto o seu computador e o túnel estiverem ligados.
+      B) Hospedar num serviço que rode Node.js (Render, Railway, Fly.io ou um servidor próprio):
+         envie esta pasta inteira e use o comando de início "node server.js". O servidor lê a porta da
+         variável PORT. ATENÇÃO: planos grátis às vezes apagam arquivos ao reiniciar; veja se o serviço
+         tem disco persistente, senão você perde fichas e névoa.
+  - Hospedagens SÓ de arquivos (Netlify Drop, GitHub Pages etc.) NÃO rodam o servidor. Se você subir a
+    pasta "public" lá, o app abre em MODO LOCAL: funciona só no navegador de quem abriu, sem ligação
+    entre mestre e jogadores. Serve para você usar sozinho na chamada de vídeo, compartilhando a tela.
+
+MODO LOCAL (SEM SERVIDOR)
+  Se você abrir public/index.html direto (duplo clique), o app funciona sozinho, com tudo salvo no
+  navegador (sem login e sem outros jogadores). Dá para usar na chamada de vídeo compartilhando a tela.
+
+SEGURANÇA E DADOS
+  - Troque a senha do mestre. Sem https (links http), a senha trafega sem criptografia: use túnel/https
+    quando jogar pela internet.
+  - Tudo fica no arquivo dados.json, criado ao lado do server.js. Faça cópia dele de vez em quando.
+    Para zerar a mesa, apague o dados.json com o servidor desligado (os segredos iniciais voltam do seed.json).
+  - Os segredos do mestre (descrições, marcações secretas, notas) só são enviados ao navegador do mestre.
+  - As anotações particulares de cada jogador só são enviadas ao navegador do próprio jogador.
+  - A regra de que cada jogador mexe só nos próprios tokens, ficha e entradas do diário é aplicada pelo
+    app, não pelo servidor: entre amigos de mesa basta.
+
+PROBLEMAS COMUNS
+  - "Senha do mestre incorreta": confira o config.json (reinicie o servidor depois de editar).
+  - Os jogadores não conseguem abrir: o computador do mestre precisa estar ligado, com a janela aberta,
+    e o firewall pode pedir permissão ao Node.js (aceite em "redes privadas").
+  - A página mostra "reconectando": a conexão caiu; ela volta sozinha.

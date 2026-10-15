@@ -1,0 +1,11 @@
+{
+ "secret/loc": {
+  "j": "{\"0\": [\"Entrada principal\", \"Praça em frente à igreja\", \"Cripta subterrânea\"], \"1\": [\"Fonte central\", \"Bancos e jardins\", \"Ruas comerciais ao redor\"], \"2\": [\"Registros históricos\", \"Documentos do incêndio\", \"Arquivos de desaparecidos\"], \"3\": [\"Túmulos antigos\", \"Mausoléus\", \"Área abandonada\"], \"4\": [\"Vielas estreitas\", \"Casas antigas\", \"Caminho até a região do rio\"], \"5\": [\"Lojas\", \"Restaurantes\", \"Pequenos mercados\"], \"6\": [\"Casas e apartamentos\", \"Ruas estreitas\", \"Moradores antigos\"], \"7\": [\"Cais\", \"Armazéns\", \"Barcos e embarcações\"], \"8\": [\"Plataforma principal\", \"Bilheteria\", \"Depósito desativado\"], \"9\": [\"Jardins\", \"Coreto\", \"Caminhos arborizados\"], \"10\": [\"Recepção\", \"Ala de internação\", \"Arquivo médico\"], \"11\": [\"Prédios históricos\", \"Ruas de paralelepípedos\", \"Edifícios abandonados\"]}"
+ },
+ "secret/ann": {
+  "j": "[{\"f\": \"terreo\", \"x\": 570, \"y\": 90, \"w\": 60, \"h\": 22, \"t\": \"Compartimento escondido\"}, {\"f\": \"terreo\", \"x\": 600, \"y\": 176, \"t\": \"Livro\"}, {\"f\": \"subsolo\", \"x\": 560, \"y\": 1076, \"w\": 80, \"h\": 8, \"t\": \"Porta secreta (relógio)\"}, {\"f\": \"subsolo\", \"x\": 560, \"y\": 1088, \"w\": 80, \"h\": 184, \"t\": \"Passagem secreta\"}, {\"f\": \"subsolo\", \"x\": 1005, \"y\": 1500, \"t\": \"A origem do mistério\"}]"
+ },
+ "secret/notes": {
+  "t": "PISTAS\n- Badaladas vindas da Basílica com o sino imóvel\n- Lápides com data e sem nome\n- O zelador lembra de enterrados que não estão em nenhum registro\n\nSEGREDOS\n- Altar-mor: livro + compartimento escondido\n- Cripta: o relógio esconde a passagem secreta\n- Câmara da Oração: origem do mistério (acesso também pela torre do sino)\n\nCAPELAS\n- Ausentes: nomes apagados\n- Confissão: vozes e perguntas"
+ }
+}
